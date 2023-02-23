@@ -14,3 +14,24 @@ end
 puts compare_numbers(5, 12)
 
 # Challenge2: Ordered Count of Characters(Toy Problem)
+
+def count_characters(str)
+  counts = {}
+  chars = str.chars
+
+  chars.each do |char|
+    if counts[char].nil?
+      counts[char] = 0
+    end
+    counts[char] += 1
+  end
+
+  result = []
+  counts.each do |char, count|
+    if count > 0
+      result << [char, count]
+    end
+  end
+
+  return result
+end
